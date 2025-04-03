@@ -1,9 +1,9 @@
-Item,Description,Link
-Arduino Environmental Monitor Bundle,Data storage and temperature measurement,https://store-usa.arduino.cc/products/environmental-monitor-bundle
-Arduino MKR GPS Shield,Project altitude tracking,https://store-usa.arduino.cc/products/arduino-mkr-gps-shield
-Arduino MKR Connector Carrier,Connect board with One Wire Temperature Sensor,https://store-usa.arduino.cc/collections/shields-carriers/products/arduino-mkr-connector-carrier-grove-compatible
-18650 Battery Holder Case 3 Slot,Battery to power the board,https://www.seeedstudio.com/18650-Battery-Holder-Case-3-Slot-p-4159.html
-One Wire Temperature Sensor DS18B20,Measure liquid freezing,https://www.seeedstudio.com/One-Wire-Temperature-Sensor-p-1235.html
-Energizer CR1216 Battery,Battery to power MKR GPS Shield,https://a.co/d/4oMxy33
-Knox Gelatine Original,Structure and texture for popsicles,https://a.co/d/b5cnJUF
-Kool-Aid Liquid Drink Mix Variety Pack,Flavoring and dye for popsicles,https://a.co/d/ecQWKEY
+Item,Description,SKU (ASIN for Amazon),Link
+Arduino Environmental Monitor Bundle,Data storage and temperature measurement,VB00012,https://store-usa.arduino.cc/products/environmental-monitor-bundle
+Arduino MKR GPS Shield,Project altitude tracking,ASX00017,https://store-usa.arduino.cc/products/arduino-mkr-gps-shield
+Arduino MKR Connector Carrier,Connect board with One Wire Temperature Sensor,ASX00007,https://store-usa.arduino.cc/collections/shields-carriers/products/arduino-mkr-connector-carrier-grove-compatible
+18650 Battery Holder Case 3 Slot,Battery to power the board,106990288,https://www.seeedstudio.com/18650-Battery-Holder-Case-3-Slot-p-4159.html
+One Wire Temperature Sensor DS18B20,Measure liquid freezing,101990019,https://www.seeedstudio.com/One-Wire-Temperature-Sensor-p-1235.html
+Energizer CR1216 Battery,Battery to power MKR GPS Shield,B008IJPFZ0,https://a.co/d/4oMxy33
+Knox Gelatine Original,Structure and texture for popsicles,B00H3TAUG0,https://a.co/d/b5cnJUF
+Kool-Aid Liquid Drink Mix Variety Pack,Flavoring and dye for popsicles,B07ZHFPKXW,https://a.co/d/ecQWKEY
