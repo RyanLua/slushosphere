@@ -1,4 +1,4 @@
-Item,Description,SKU/ASIN/Product ID,Manufacturer Link,Amazon Link
+Item,Description,SKU/ASIN,Manufacturer Link,Amazon Link
 Arduino Environmental Monitor Bundle,Data storage and temperature measurement,VB00012,https://store-usa.arduino.cc/products/environmental-monitor-bundle,https://www.amazon.com/dp/B0B39S11K1
 Arduino MKR Connector Carrier,Connect board with One Wire Temperature Sensor,ASX00007,https://store-usa.arduino.cc/collections/shields-carriers/products/arduino-mkr-connector-carrier-grove-compatible,https://www.amazon.com/dp/B07JKVW8XT
 Adafruit Lithium Ion Polymer Battery 3.7v 1200mAh,Battery to power the board,258,https://www.adafruit.com/product/258,https://www.amazon.com/dp/B00J2QET64
@@ -7,3 +7,4 @@ One Wire Temperature Sensor DS18B20,Measure liquid freezing,101990019,https://ww
 SanDisk MAX ENDURANCE microSD Card 32GB,Data storage,SDSQQVR-032G-GN6IA,https://shop.sandisk.com/products/memory-cards/microsd-cards/sandisk-max-endurance-uhs-i-microsd?sku=SDSQQVR-032G-GN6IA,https://www.amazon.com/dp/B084CJLNM4
 Knox Gelatine Original,Structure and texture for popsicles,B00H3TAUG0,https://knoxgelatine.com,https://www.amazon.com/dp/B00H3TAUG0
 Kool-Aid Liquid Drink Mix Variety Pack,Flavoring and dye for popsicles,B07ZHFPKXW,https://www.kraftheinz.com/kool-aid/products/00043000005743,https://www.amazon.com/dp/B07ZHFPKXW
+Polar Tech Thermo Chill 207/T16C 8 x 6 x 7",Box to hold project,207/T16C,https://www.polar-tech.com/shop/item/207%2Ft16c,https://www.amazon.com/dp/B007ICA67U

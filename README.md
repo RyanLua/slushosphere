@@ -20,6 +20,7 @@ Below is a list of materials we used to make this project. All materials have be
 | SanDisk MAX ENDURANCE microSD Card 32GB                          | Data storage                                   | SDSQQVR-032G-GN6IA  | https://shop.sandisk.com/products/memory-cards/microsd-cards/sandisk-max-endurance-uhs-i-microsd?sku=SDSQQVR-032G-GN6IA | https://www.amazon.com/dp/B084CJLNM4 |
 | Knox Gelatine Original                                           | Structure and texture for popsicles            | B00H3TAUG0          | https://knoxgelatine.com                                                                                                | https://www.amazon.com/dp/B00H3TAUG0 |
 | Kool-Aid Liquid Drink Mix Variety Pack                           | Flavoring and dye for popsicles                | B07ZHFPKXW          | https://www.kraftheinz.com/kool-aid/products/00043000005743                                                             | https://www.amazon.com/dp/B07ZHFPKXW |
+| Polar Tech Thermo Chill 207/T16C 8 x 6 x 7"                      | Box to hold project                            | 207/T16C            | https://www.polar-tech.com/shop/item/207%2Ft16c                                                                         | https://www.amazon.com/dp/B007ICA67U |
 
 ### Student discounts
 
