@@ -10,7 +10,7 @@ This project is a part of [Apex Hacks 2025](https://apex.hackclub.com) from [Hac
 
 Below is a list of materials we used to make this project. All materials have been checked to operate as low as -20°C.
 
-| Item                                                             | Description                                    | SKU/ASIN/Product ID | Manufacturer Link                                                                                                       | Amazon Link                          |
+| Item                                                             | Description                                    | SKU/ASIN            | Manufacturer Link                                                                                                       | Amazon Link                          |
 | ---------------------------------------------------------------- | ---------------------------------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | Arduino Environmental Monitor Bundle                             | Data storage and temperature measurement       | VB00012             | https://store-usa.arduino.cc/products/environmental-monitor-bundle                                                      | https://www.amazon.com/dp/B0B39S11K1 |
 | Arduino MKR Connector Carrier                                    | Connect board with One Wire Temperature Sensor | ASX00007            | https://store-usa.arduino.cc/collections/shields-carriers/products/arduino-mkr-connector-carrier-grove-compatible       | https://www.amazon.com/dp/B07JKVW8XT |
