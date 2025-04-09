@@ -1,6 +1,14 @@
-# Hardware Datasheet
+# Project Datasheet
 
-Datasheet for the hardware components used in the project.
+Datasheet for weight of non-electronics used in the project.
+
+| Item                                       | Weight (g) | Manufacturer Link                               |
+| ------------------------------------------ | ---------- | ----------------------------------------------- |
+| Polar Tech Thermo Chill 207/T16C 8 x 6 x 7 | 31         | https://www.polar-tech.com/shop/item/207%2Ft16c |
+
+# Electronics Datasheet
+
+Datasheet for the electronics used in the project.
 
 | Item                                              | Temperature range (°C) | Weight (g) | Datasheet Link                                                                                                          |
 | ------------------------------------------------- | ---------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------- |
