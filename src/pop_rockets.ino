@@ -3,6 +3,7 @@
 */
 
 #include <Arduino_MKRENV.h>
+#include <Arduino_MKRGPS.h>
 #include <SPI.h>
 #include <SD.h>
 #include <OneWire.h>
@@ -19,11 +20,17 @@ String filename = "data.csv";
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial);
+  while (!Serial); // Wait for Serial to initialize
 
   // MKR ENV shield
   if (!ENV.begin()) {
     Serial.println("MKR ENV shield failed to initialize!");
+    while (1);
+  }
+
+  // MKR GPS Shield
+  if (!GPS.begin()) {
+    Serial.println("MKR GPS Shield failed to initialize!");
     while (1);
   }
 
@@ -44,7 +51,7 @@ void setup() {
   // Write data file if missing
   if (!SD.exists(filename) && dataFile) {
     Serial.print("Writing new data file...");
-    dataFile.println("Timestamp,Temperature,Humidity,Pressure,Illuminance,Liquid Temperature");
+    dataFile.println("Timestamp (Epoch),Temperature (°C),Humidity (%),Pressure (kPa),Illuminance (lx),Liquid Temperature (°C),Latitude,Longitude,Altitude (m),Speed (km/h),Satellites");
     dataFile.close();
   } else if (dataFile) {
     Serial.println("Data file already exists, appending data.");
@@ -58,28 +65,41 @@ void setup() {
 
 void loop() {
   sensors.requestTemperatures();
-  
+
+  if (!GPS.available()) {
+    Serial.println("GPS data not available!");
+  }
+
+  if(liquidTemperature == DEVICE_DISCONNECTED_C) 
+  {
+    Serial.println("Liquid temperature sensor disconnected!");
+  }
+
   float temperature       = ENV.readTemperature(); // MKR ENV Shield
   float humidity          = ENV.readHumidity();
   float pressure          = ENV.readPressure();
   float illuminance       = ENV.readIlluminance();
+  float latitude          = GPS.latitude(); // MKR GPS Shield
+  float longitude         = GPS.longitude();
+  float altitude          = GPS.altitude();
+  float speed             = GPS.speed();
+  int   satellites        = GPS.satellites();
+  unsigned long epochTime = GPS.getTime();
   float liquidTemperature = sensors.getTempCByIndex(0); // One Wire Temperature Sensor
 
-  if(liquidTemperature == DEVICE_DISCONNECTED_C) 
-  {
-    Serial.println("Error: Liquid temperature sensor disconnected!");
-  }
-  
   // Print sensor data to serial
-  Serial.print("Temperature = ");
+  Serial.print("Epoch time: ");
+  Serial.println(epochTime);
+
+  Serial.print("Temperature = "); // MKR ENV Shield
   Serial.print(temperature);
   Serial.println(" °C");
 
-  Serial.print("Humidity    = ");
+  Serial.print("Humidity = ");
   Serial.print(humidity);
   Serial.println(" %");
 
-  Serial.print("Pressure    = ");
+  Serial.print("Pressure = ");
   Serial.print(pressure);
   Serial.println(" kPa");
 
@@ -91,18 +111,39 @@ void loop() {
   Serial.println(liquidTemperature);
   Serial.println(" °C");
 
+  Serial.print("Location = "); // MKR GPS Shield
+  Serial.print(latitude, 7);
+  Serial.print(", ");
+  Serial.println(longitude, 7);
+
+  Serial.print("Altitude = ");
+  Serial.print(altitude);
+  Serial.println("m");
+
+  Serial.print("Ground speed = ");
+  Serial.print(speed);
+  Serial.println(" km/h");
+
+  Serial.print("Number of satellites = ");
+  Serial.println(satellites);
+
   Serial.println(); // Print empty line
 
   // Write sensor data to data file
   File dataFile = SD.open(filename, FILE_WRITE);
 
   if (dataFile) {
-    String dataString = "void,";
+    String dataString = String(epochTime) + ",";
     dataString += String(temperature) + ",";
     dataString += String(humidity) + ",";
     dataString += String(pressure) + ",";
     dataString += String(illuminance) + ",";
-    dataString += String(liquidTemperature);
+    dataString += String(liquidTemperature) + ",";
+    dataString += String(latitude, 7) + ",";
+    dataString += String(longitude, 7) + ",";
+    dataString += String(altitude) + ",";
+    dataString += String(speed) + ",";
+    dataString += String(satellites);
   
     dataFile.println(dataString);
     dataFile.close();
