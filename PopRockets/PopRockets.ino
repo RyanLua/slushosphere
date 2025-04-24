@@ -68,6 +68,7 @@ void setup() {
 }
 
 void loop() {
+  // Fetch data from sensors
   sensors.requestTemperatures();
 
   if (!GPS.available()) {
