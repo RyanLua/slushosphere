@@ -6,6 +6,10 @@ This project is a part of [Apex Hacks 2025](https://apex.hackclub.com) from [Hac
 
 [![Apex wordmark](https://apex.hackclub.com/_astro/wordmark.D2ClV-3K_TMzl.webp)](https://apex.hackclub.com)
 
+## Code
+
+You can use either [Arduino IDE 2](https://docs.arduino.cc/software/ide/#ide-v2) or [Visual Studio Code](https://code.visualstudio.com) with [arduino-cli](https://arduino.github.io/arduino-cli) to upload the code to the Arduino MKR WiFi 1010.
+
 ## Materials
 
 We can see the [Bill of Materials](Bill%20of%20Materials.csv) we used to make this project. All materials have been checked to operate as low as -20°C.
