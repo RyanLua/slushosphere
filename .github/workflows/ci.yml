@@ -35,5 +35,4 @@ jobs:
         uses: arduino/arduino-lint-action@v2
         with:
           path: PopRockets
-          project-type: sketch
           compliance: strict
