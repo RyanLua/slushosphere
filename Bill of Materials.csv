@@ -1,6 +1,7 @@
 Item,Description,SKU,Manufacturer Link,Amazon Link
 Arduino Environmental Monitor Bundle,Data storage and temperature measurement,VB00012,https://store-usa.arduino.cc/products/environmental-monitor-bundle,https://www.amazon.com/dp/B0B39S11K1
 Arduino MKR Connector Carrier,Connect board with One Wire Temperature Sensor,ASX00007,https://store-usa.arduino.cc/collections/shields-carriers/products/arduino-mkr-connector-carrier-grove-compatible,https://www.amazon.com/dp/B07JKVW8XT
+Arduino MKR GPS Shield,GPS module for location tracking,ASX00017,https://store-usa.arduino.cc/products/arduino-mkr-gps-shield,https://www.amazon.com/dp/B084DT7ZLQ
 Adafruit Lithium Ion Polymer Battery 3.7v 1200mAh,Battery to power the board,258,https://www.adafruit.com/product/258,https://www.amazon.com/dp/B00J2QET64
 Adafruit Micro-Lipo Charger for LiPo/LiIon Batt w/MicroUSB Jack - v1,Charger for the battery,1904,https://www.adafruit.com/product/1904,https://www.amazon.com/dp/B00SK8J94M
 One Wire Temperature Sensor DS18B20,Measure liquid freezing,101990019,https://www.seeedstudio.com/One-Wire-Temperature-Sensor-p-1235.html,
