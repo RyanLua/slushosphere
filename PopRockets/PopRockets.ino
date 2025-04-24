@@ -74,10 +74,6 @@ void loop() {
     Serial.println("GPS data not available!");
   }
 
-  if (liquidTemperature == DEVICE_DISCONNECTED_C) {
-    Serial.println("Liquid temperature sensor disconnected!");
-  }
-
   float temperature = ENV.readTemperature();  // MKR ENV Shield
   float humidity = ENV.readHumidity();
   float pressure = ENV.readPressure();
@@ -89,6 +85,10 @@ void loop() {
   int satellites = GPS.satellites();
   unsigned long epochTime = GPS.getTime();
   float liquidTemperature = sensors.getTempCByIndex(0);  // One Wire Temperature Sensor
+
+  if (liquidTemperature == DEVICE_DISCONNECTED_C) {
+    Serial.println("Liquid temperature sensor disconnected!");
+  }
 
   // Print sensor data to serial
   Serial.print("Epoch time: ");
