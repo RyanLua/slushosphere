@@ -16,12 +16,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        project:
-          - path: PopRockets
-            project-type: sketch
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -40,6 +34,6 @@ jobs:
       - name: Arduino Lint
         uses: arduino/arduino-lint-action@v2
         with:
-          path: ${{ matrix.project.path }}
-          project-type: ${{ matrix.project.project-type }}
+          path: PopRockets
+          project-type: sketch
           compliance: strict
