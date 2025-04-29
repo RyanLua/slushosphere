@@ -12,11 +12,45 @@ This project is a part of [Apex Hacks 2025](https://apex.hackclub.com) from [Hac
 
 You can use either [Arduino IDE 2](https://docs.arduino.cc/software/ide/#ide-v2) or [Visual Studio Code](https://code.visualstudio.com) with [arduino-cli](https://arduino.github.io/arduino-cli) to upload the code to the Arduino MKR WiFi 1010.
 
+## Hardware
+
+We are using the [Arduino Environmental Monitor Bundle](https://store-usa.arduino.cc/products/environmental-monitor-bundle) which includes the following parts:
+
+- [Arduino MKR WiFi 1010](https://store-usa.arduino.cc/products/arduino-mkr-wifi-1010)
+  - This is the main board that will run the code and connect to the shields and carriers.
+- [Arduino MKR ENV Shield rev2](https://store-usa.arduino.cc/products/arduino-mkr-env-shield-rev2)
+  - This shield has the sensors to measure ambient temperature, humidity, and pressure. It also has a microSD card slot to record the data.
+
+In addition to the bundle, we are using the following parts:
+
+- [Arduino MKR GPS Shield](https://store-usa.arduino.cc/products/arduino-mkr-gps-shield)
+  - This shield has a GPS module to record the location and altitude of the balloon. It also has a real-time clock (RTC) which will be used to record the time of the data.
+- [Arduino MKR Connector Carrier](https://store-usa.arduino.cc/collections/shields-carriers/products/arduino-mkr-connector-carrier-grove-compatible)
+  - This carrier has Seeed Studio Grove connectors to connect our submersible temperature sensor from Seeed Studio.
+- [One Wire Temperature Sensor DS18B20](https://www.seeedstudio.com/One-Wire-Temperature-Sensor-p-1235.html)
+  - This is a submersible temperature sensor that will be used to measure the temperature of the water. It is connected to the MKR Connector Carrier.
+
+### Collected data
+
+The data collected by the Arduino MKR WiFi 1010 will be stored in a microSD card in the Arduino MKR ENV Shield. The data will be in CSV format with the following columns:
+
+- `Timestamp (Epoch)`: The time the data was recorded in epoch format.
+- `Temperature (°C)`: The ambient temperature in degrees Celsius measured by the MKR ENV Shield.
+- `Humidity (%)`: The ambient humidity in percentage measured by the MKR ENV Shield.
+- `Pressure (kPa)`: The ambient pressure in kilopascals measured by the MKR ENV Shield.
+- `Illuminance (lx)`: The ambient illuminance in lux measured by the MKR ENV Shield.
+- `Liquid Temperature (°C)`: The temperature of the water in degrees Celsius measured by the submersible temperature sensor.
+- `Latitude`: The latitude of the balloon's location measured by the MKR GPS Shield.
+- `Longitude`: The longitude of the balloon's location measured by the MKR GPS Shield.
+- `Altitude (m)`: The altitude of the balloon's location in meters measured by the MKR GPS Shield.
+- `Speed (km/h)`: The speed of the balloon in kilometers per hour measured by the MKR GPS Shield.
+- `Satellites`: The number of satellites used to calculate the location and altitude measured by the MKR GPS Shield.
+
 ## Materials
 
 We can see the [Bill of Materials](Bill%20of%20Materials.csv) we used to make this project. It will contain the manufacturer and Amazon links for you to buy the materials. The total cost of the materials is under 400 USD.
 
-All electronic materials have been checked to operate as low as -20°C. You can see the [Datasheet](Datasheet.md) for each electronic's official datasheet with operating temperatures.
+All materials have been checked to operate as low as -20°C. You can see the [Datasheet](Datasheet.md) for each electronic's official datasheet with operating temperatures.
 
 ### Student discounts
 
