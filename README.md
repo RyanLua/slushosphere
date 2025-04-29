@@ -1,6 +1,8 @@
-# Pop Rockets
+# Slushosphere
 
-Pop Rockets is a project to make popsicles in the [stratosphere](https://en.wikipedia.org/wiki/Stratosphere) and record the altitiude in which popsicles freeze via high-altitude-balloons (HAB).
+Slushosphere is a project to make slushies in the [stratosphere](https://en.wikipedia.org/wiki/Stratosphere) via high-altitude-balloons (HAB) and record the altitude in which water becomes a slushie. When water is exposed to low pressure, it boils at a lower temperature. At the same time, it freezes because of the cold temperatures in the stratosphere. We predict because of this, water will turn into a slush in the stratosphere.
+
+How we will achieve this is using an Arduino with an environmental shield that has ambient temperature, humidity, and pressure sensors. A GPS shield will be used to record the location and altitude of the balloon along with time. A connector carrier to connect a submersible temperature sensor to measure the temperature of the water. A microSD card on the environmental shield to record all the data and a battery connected to the Arduino to power it all.
 
 This project is a part of [Apex Hacks 2025](https://apex.hackclub.com) from [Hack Club](https://hackclub.com). Apex has provided us with the resources to make this project a reality including funding, travel and lodging, and a team of event organizers to help us along the way.
 
@@ -12,7 +14,9 @@ You can use either [Arduino IDE 2](https://docs.arduino.cc/software/ide/#ide-v2)
 
 ## Materials
 
-We can see the [Bill of Materials](Bill%20of%20Materials.csv) we used to make this project. All materials have been checked to operate as low as -20°C.
+We can see the [Bill of Materials](Bill%20of%20Materials.csv) we used to make this project. It will contain the manufacturer and Amazon links for you to buy the materials. The total cost of the materials is under 400 USD.
+
+All electronic materials have been checked to operate as low as -20°C. You can see the [Datasheet](Datasheet.md) for each electronic's official datasheet with operating temperatures.
 
 ### Student discounts
 
@@ -28,8 +32,6 @@ Discounts you can use if you are a student and doing this project.
 ## Notes
 
 ### Altitude tracking
-
-We don't have a way to measure altitude because the way Apex projects a launched, they already record the altitude for us. You use something like the [Arduino MKR GPS Shield](https://store.arduino.cc/products/arduino-mkr-gps-shield) to measure altitude.
 
 If you're using a different GPS, make sure it works over 60,000 ft since most do not.
 
