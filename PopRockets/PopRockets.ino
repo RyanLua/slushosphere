@@ -38,7 +38,7 @@ void setup() {
   }
 
   // microSD Card
-  if (!SD.begin(10)) {  // TODO: Change this to proper microSD card pin
+  if (!SD.begin(4)) {
     Serial.println("microSD card failed, or not present!");
     while (1)
       ;
