@@ -12,6 +12,16 @@ This project is a part of [Apex Hacks 2025](https://apex.hackclub.com) from [Hac
 
 You can use either [Arduino IDE 2](https://docs.arduino.cc/software/ide/#ide-v2) or [Visual Studio Code](https://code.visualstudio.com) with [arduino-cli](https://arduino.github.io/arduino-cli) to upload the code to the Arduino MKR WiFi 1010.
 
+### Tested
+
+The Arduino has verified self-diagnosis for the following parts:
+
+- [x] microSD card
+- [x] MKR ENV shield
+- [ ] MKR GPS shield
+- [ ] MKR Connector Carrier
+- [ ] DS18B20 temperature sensor
+
 ## Hardware
 
 We are using the [Arduino Environmental Monitor Bundle](https://store-usa.arduino.cc/products/environmental-monitor-bundle) which includes the following parts:
