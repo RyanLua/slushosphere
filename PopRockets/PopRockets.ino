@@ -150,6 +150,7 @@ void loop()
 
   if (dataFile)
   {
+    // TODO: See what happens when the sensor is disconnected and we try to write the data
     String dataString = String(epochTime) + ",";
     dataString += String(temperature) + ",";
     dataString += String(humidity) + ",";
