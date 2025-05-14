@@ -113,7 +113,7 @@ void loop() {
 
   Serial.print("Liquid Temperature = ");
   Serial.println(liquidTemperature);
-  Serial.println(" °C");
+  Serial.print(" °C");
 
   Serial.print("Location = ");  // MKR GPS Shield
   Serial.print(latitude, 7);
