@@ -43,7 +43,7 @@ void setup()
   // microSD Card
   if (!SD.begin(4))
   {
-    Serial.println("microSD card failed, or not present!");
+    Serial.println("microSD card failed to initialize!");
     while (1)
       ;
   }
