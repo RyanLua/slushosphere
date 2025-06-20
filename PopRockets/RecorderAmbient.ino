@@ -6,16 +6,8 @@
 #include <Arduino_MKRGPS.h>
 #include <SPI.h>
 #include <SD.h>
-// #include <OneWire.h>
 #include <string>
-// #include <DallasTemperature.h>
 
-// TODO: Change this when we have a physical prototype
-// Data wire is plugged into port 2 on the Arduino
-#define ONE_WIRE_BUS 2
-
-// OneWire oneWire(ONE_WIRE_BUS);
-// DallasTemperature sensors(&oneWire);
 String filename = "data.csv";
 
 void setup()
@@ -48,9 +40,6 @@ void setup()
       ;
   }
 
-  // One Wire Temperature Sensor
-  // sensors.begin();
-
   Serial.println("Successfully initialized sensors.");
 
   // Open data file
@@ -60,7 +49,6 @@ void setup()
   if (!SD.exists(filename) && dataFile)
   {
     Serial.print("Writing new data file...");
-    // dataFile.println("Timestamp (Epoch),Temperature (°C),Humidity (%),Pressure (kPa),Illuminance (lx),Liquid Temperature (°C),Latitude,Longitude,Altitude (m),Speed (km/h),Satellites");
     dataFile.println("Timestamp (Epoch),Temperature (°C),Humidity (%),Pressure (kPa),Illuminance (lx),Latitude,Longitude,Altitude (m),Speed (km/h),Satellites");
     dataFile.close();
   }
@@ -79,9 +67,6 @@ void setup()
 
 void loop()
 {
-  // Fetch data from sensors
-  // sensors.requestTemperatures();
-
   if (!GPS.available())
   {
     Serial.println("GPS data not available!");
@@ -97,12 +82,6 @@ void loop()
   float speed = GPS.speed();
   int satellites = GPS.satellites();
   unsigned long epochTime = GPS.getTime();
-  // float liquidTemperature = sensors.getTempCByIndex(0); // One Wire Temperature Sensor
-
-  // if (liquidTemperature == DEVICE_DISCONNECTED_C)
-  // {
-  //   Serial.println("Liquid temperature sensor disconnected!");
-  // }
 
   // Print sensor data to serial
   Serial.print("Epoch time: ");
@@ -123,10 +102,6 @@ void loop()
   Serial.print("Illuminance = ");
   Serial.print(illuminance);
   Serial.println(" lx");
-
-  // Serial.print("Liquid Temperature = ");
-  // Serial.println(liquidTemperature);
-  // Serial.print(" °C");
 
   Serial.print("Location = "); // MKR GPS Shield
   Serial.print(latitude, 7);
@@ -157,7 +132,6 @@ void loop()
     dataString += String(humidity) + ",";
     dataString += String(pressure) + ",";
     dataString += String(illuminance) + ",";
-    // dataString += String(liquidTemperature) + ",";
     dataString += String(latitude, 7) + ",";
     dataString += String(longitude, 7) + ",";
     dataString += String(altitude) + ",";
