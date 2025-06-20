@@ -10,31 +10,27 @@
 
 String filename = "data.csv";
 
-void setup()
-{
+void setup() {
   Serial.begin(9600);
   while (!Serial)
     ;
 
   // MKR ENV shield
-  if (!ENV.begin())
-  {
+  if (!ENV.begin()) {
     Serial.println("MKR ENV shield failed to initialize!");
     while (1)
       ;
   }
 
   // MKR GPS Shield
-  if (!GPS.begin())
-  {
+  if (!GPS.begin()) {
     Serial.println("MKR GPS Shield failed to initialize!");
     while (1)
       ;
   }
 
   // microSD Card
-  if (!SD.begin(4))
-  {
+  if (!SD.begin(4)) {
     Serial.println("microSD card failed to initialize!");
     while (1)
       ;
@@ -46,37 +42,30 @@ void setup()
   File dataFile = SD.open(filename, FILE_WRITE);
 
   // Write data file if missing
-  if (!SD.exists(filename) && dataFile)
-  {
+  if (!SD.exists(filename) && dataFile) {
     Serial.print("Writing new data file...");
     dataFile.println("Timestamp (Epoch),Temperature (°C),Humidity (%),Pressure (kPa),Illuminance (lx),Latitude,Longitude,Altitude (m),Speed (km/h),Satellites");
     dataFile.close();
-  }
-  else if (dataFile)
-  {
+  } else if (dataFile) {
     Serial.println("Data file already exists, appending data.");
     dataFile.close();
-  }
-  else
-  {
+  } else {
     Serial.println("Unknown error checking data file!");
   }
 
   Serial.println("Successfully initialized SD card.");
 }
 
-void loop()
-{
-  if (!GPS.available())
-  {
+void loop() {
+  if (!GPS.available()) {
     Serial.println("GPS data not available!");
   }
 
-  float temperature = ENV.readTemperature(); // MKR ENV Shield
+  float temperature = ENV.readTemperature();  // MKR ENV Shield
   float humidity = ENV.readHumidity();
   float pressure = ENV.readPressure();
   float illuminance = ENV.readIlluminance();
-  float latitude = GPS.latitude(); // MKR GPS Shield
+  float latitude = GPS.latitude();  // MKR GPS Shield
   float longitude = GPS.longitude();
   float altitude = GPS.altitude();
   float speed = GPS.speed();
@@ -87,7 +76,7 @@ void loop()
   Serial.print("Epoch time: ");
   Serial.println(epochTime);
 
-  Serial.print("Temperature = "); // MKR ENV Shield
+  Serial.print("Temperature = ");  // MKR ENV Shield
   Serial.print(temperature);
   Serial.println(" °C");
 
@@ -103,7 +92,7 @@ void loop()
   Serial.print(illuminance);
   Serial.println(" lx");
 
-  Serial.print("Location = "); // MKR GPS Shield
+  Serial.print("Location = ");  // MKR GPS Shield
   Serial.print(latitude, 7);
   Serial.print(", ");
   Serial.println(longitude, 7);
@@ -119,13 +108,12 @@ void loop()
   Serial.print("Number of satellites = ");
   Serial.println(satellites);
 
-  Serial.println(); // Print empty line
+  Serial.println();  // Print empty line
 
   // Write sensor data to data file
   File dataFile = SD.open(filename, FILE_WRITE);
 
-  if (dataFile)
-  {
+  if (dataFile) {
     // TODO: See what happens when the sensor is disconnected and we try to write the data
     String dataString = String(epochTime) + ",";
     dataString += String(temperature) + ",";
@@ -140,9 +128,7 @@ void loop()
 
     dataFile.println(dataString);
     dataFile.close();
-  }
-  else
-  {
+  } else {
     Serial.println("Error writing to data file!");
   }
 
