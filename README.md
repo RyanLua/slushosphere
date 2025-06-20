@@ -12,7 +12,7 @@ This project is a part of [Apex Hacks 2025](https://apex.hackclub.com) from [Hac
 
 You can use either [Arduino IDE 2](https://docs.arduino.cc/software/ide/#ide-v2) or [Visual Studio Code](https://code.visualstudio.com) with [arduino-cli](https://arduino.github.io/arduino-cli) to upload the code to the Arduino MKR WiFi 1010.
 
-### Tested
+### Tested parts
 
 The Arduino has verified self-diagnosis for the following parts:
 
@@ -21,6 +21,19 @@ The Arduino has verified self-diagnosis for the following parts:
 - [ ] MKR GPS shield
 - [ ] MKR Connector Carrier
 - [ ] DS18B20 temperature sensor
+
+### LED key
+
+The MKR WiFi 1010's built-in RGB LED is used to indicate the status of the Arduino and its components. The LED will show the following colors:
+
+- `rgb(0, 0, 255)`: Initializing 
+  - The Arduino is starting up and initializing the components.
+- `rgb(255, 0, 0)`: Major error
+  - The Arduino has encountered a major error and is unable to continue.
+- `rgb(255, 255, 0)`: Minor error
+  - The Arduino has encountered a minor error and is still able to continue.
+- `rgb(0, 255, 0)`: Fully working
+  - The Arduino is fully operational and all components are functioning correctly.
 
 ## Hardware
 
