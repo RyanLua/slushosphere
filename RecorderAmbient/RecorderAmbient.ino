@@ -48,15 +48,17 @@ void setup() {
   Serial.println("Successfully initialized sensors.");
 
   // Open data file
-  File dataFile = SD.open(filename, FILE_WRITE);
+  // File dataFile = SD.open(filename, FILE_WRITE);
+  File dataFile = SD.open(filename);
 
   // Write data file if missing
-  if (!SD.exists(filename) && dataFile) {
-    Serial.print("Writing new data file...");
-    dataFile.println("Timestamp (Epoch),Temperature (°C),Humidity (%),Pressure (kPa),Illuminance (lx),Latitude,Longitude,Altitude (m),Speed (km/h),Satellites");
-    dataFile.close();
-  } else if (dataFile) {
+  if (dataFile) {
     Serial.println("Data file already exists, appending data.");
+    dataFile.close();
+  } else if (!SD.exists(filename)) {
+    Serial.println("Writing new data file...");
+    dataFile = SD.open(filename, FILE_WRITE);
+    dataFile.println("Timestamp (Epoch),Temperature (°C),Humidity (%),Pressure (kPa),Illuminance (lx),Latitude,Longitude,Altitude (m),Speed (km/h),Satellites");
     dataFile.close();
   } else {
     Serial.println("Unknown error checking data file!");
