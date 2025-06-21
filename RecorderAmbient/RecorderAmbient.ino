@@ -20,8 +20,6 @@ void setup() {
   setLED(LOW, LOW, HIGH);  // BLUE
 
   Serial.begin(9600);
-  while (!Serial)
-    ;
 
   // MKR ENV shield
   if (!ENV.begin()) {
