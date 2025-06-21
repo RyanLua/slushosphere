@@ -64,7 +64,6 @@ void setup() {
   }
 
   Serial.println("Successfully initialized SD card.");
-  setLED(HIGH, LOW, HIGH);  // PURPLE
 }
 
 void loop() {

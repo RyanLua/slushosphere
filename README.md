@@ -32,10 +32,8 @@ The MKR WiFi 1010's built-in RGB LED is used to indicate the status of the Ardui
   - The Arduino has encountered an error and is unable to continue.
 - Blinking Green: Fully working
   - The Arduino is fully operational and all components are functioning correctly.
-- Purple: Waiting for GPS
-  - The Arduino is waiting for a GPS signal to be received.
 
-When you turn on the device, the LED will be blue while it initializes. Then, if there is no GPS signal, it will turn purple and wait for a GPS signal. If the GPS signal is received, the LED will turn green and start blinking. If there is an error with any of the components, the LED will turn red.
+When you turn on the device, the LED will be blue while it initializes and then turn off when it finishes. If there is a GPS signal, the LED will turn green and start blinking. If there is an error with any of the components, the LED will turn red.
 
 Each time the LED flashes green, it means that it has successfully recorded a data point.
 
