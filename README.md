@@ -28,10 +28,8 @@ The MKR WiFi 1010's built-in RGB LED is used to indicate the status of the Ardui
 
 - `rgb(0, 0, 255) 🔵`: Initializing 
   - The Arduino is starting up and initializing the components.
-- `rgb(255, 0, 0) 🔴` : Major error
-  - The Arduino has encountered a major error and is unable to continue.
-- `rgb(255, 255, 0) 🟡`: Minor error
-  - The Arduino has encountered a minor error and is still able to continue.
+- `rgb(255, 0, 0) 🔴`: Error
+  - The Arduino has encountered an error and is unable to continue.
 - `rgb(0, 255, 0) 🟢`: Fully working
   - The Arduino is fully operational and all components are functioning correctly.
 

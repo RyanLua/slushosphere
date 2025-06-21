@@ -73,7 +73,7 @@ void loop() {
 
   if (!GPS.available()) {
     Serial.println("GPS data not available!");
-    // setLED(HIGH, LOW, LOW);  // RED
+    setLED(HIGH, LOW, LOW);  // RED
   }
 
   float temperature = ENV.readTemperature();  // MKR ENV Shield
