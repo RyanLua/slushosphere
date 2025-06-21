@@ -66,6 +66,7 @@ void setup() {
   }
 
   Serial.println("Successfully initialized SD card.");
+  setLED(HIGH, LOW, HIGH);  // PURPLE
 }
 
 void loop() {
@@ -143,8 +144,8 @@ void loop() {
       Serial.println("Error writing to data file!");
       setLED(HIGH, LOW, LOW);  // RED
     }
-
-    delay(1000);
+  } else {
+    setLED(LOW, LOW, LOW);  // NONE
   }
 }
 
