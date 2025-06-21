@@ -7,10 +7,18 @@
 #include <SPI.h>
 #include <SD.h>
 #include <string>
+#include <WiFiNINA.h>
+#include <utility/wifi_drv.h>
 
 String filename = "data.csv";
 
 void setup() {
+  WiFiDrv::pinMode(25, OUTPUT);  //define GREEN LED
+  WiFiDrv::pinMode(26, OUTPUT);  //define RED LED
+  WiFiDrv::pinMode(27, OUTPUT);  //define BLUE LED
+
+  setLED(LOW, LOW, HIGH);  // BLUE
+
   Serial.begin(9600);
   while (!Serial)
     ;
@@ -18,6 +26,7 @@ void setup() {
   // MKR ENV shield
   if (!ENV.begin()) {
     Serial.println("MKR ENV shield failed to initialize!");
+    setLED(HIGH, LOW, LOW);  // RED
     while (1)
       ;
   }
@@ -25,6 +34,7 @@ void setup() {
   // MKR GPS Shield
   if (!GPS.begin()) {
     Serial.println("MKR GPS Shield failed to initialize!");
+    setLED(HIGH, LOW, LOW);  // RED
     while (1)
       ;
   }
@@ -32,6 +42,7 @@ void setup() {
   // microSD Card
   if (!SD.begin(4)) {
     Serial.println("microSD card failed to initialize!");
+    setLED(HIGH, LOW, LOW);  // RED
     while (1)
       ;
   }
@@ -51,14 +62,18 @@ void setup() {
     dataFile.close();
   } else {
     Serial.println("Unknown error checking data file!");
+    setLED(HIGH, LOW, LOW);  // RED
   }
 
   Serial.println("Successfully initialized SD card.");
 }
 
 void loop() {
+  setLED(LOW, HIGH, LOW);  // GREEN
+
   if (!GPS.available()) {
     Serial.println("GPS data not available!");
+    // setLED(HIGH, LOW, LOW);  // RED
   }
 
   float temperature = ENV.readTemperature();  // MKR ENV Shield
@@ -130,7 +145,14 @@ void loop() {
     dataFile.close();
   } else {
     Serial.println("Error writing to data file!");
+    setLED(HIGH, LOW, LOW);  // RED
   }
 
   delay(1000);
+}
+
+void setLED(PinStatus red, PinStatus green, PinStatus blue) {
+  WiFiDrv::digitalWrite(25, red);
+  WiFiDrv::analogWrite(26, green);  // Green should be dim to reduce power
+  WiFiDrv::digitalWrite(27, blue);
 }
