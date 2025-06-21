@@ -12,15 +12,7 @@ This project is a part of [Apex Hacks 2025](https://apex.hackclub.com) from [Hac
 
 You can use either [Arduino IDE 2](https://docs.arduino.cc/software/ide/#ide-v2) or [Visual Studio Code](https://code.visualstudio.com) with [arduino-cli](https://arduino.github.io/arduino-cli) to upload the code to the Arduino MKR WiFi 1010.
 
-### Tested parts
-
-The Arduino has verified self-diagnosis for the following parts:
-
-- [x] microSD card
-- [x] MKR ENV shield
-- [ ] MKR GPS shield
-- [ ] MKR Connector Carrier
-- [ ] DS18B20 temperature sensor
+The code for the Arduino is separated into two variants, the one measuring using [a temperature sensor on the Arduino MKR ENV Shield](RecorderAmbient/RecorderAmbient.ino) and the one measuring using [a submersible temperature sensor connected to the Arduino MKR Connector Carrier](RecorderProbe/RecorderProbe.ino). The `RecorderAmbient` was used for our launch because we did not have the submersible temperature sensor at the time. Note that the `RecorderProbe` is outdated because of this and has never been tested.
 
 ### LED key
 
