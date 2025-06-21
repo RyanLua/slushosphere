@@ -71,6 +71,8 @@ The data collected by the Arduino MKR WiFi 1010 will be stored in a microSD card
 - `Speed (km/h)`: The speed of the balloon in kilometers per hour measured by the MKR GPS Shield.
 - `Satellites`: The number of satellites used to calculate the location and altitude measured by the MKR GPS Shield.
 
+The data is available in the [data folder](data\DATA.CSV) in CSV format. You can use any spreadsheet software to open the CSV file and analyze the data.
+
 ## Materials
 
 We can see the [Bill of Materials](Bill%20of%20Materials.csv) we used to make this project. It will contain the manufacturer and Amazon links for you to buy the materials. The total cost of the materials is under 400 USD.
